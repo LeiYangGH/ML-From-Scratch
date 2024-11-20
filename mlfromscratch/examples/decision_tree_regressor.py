@@ -12,7 +12,7 @@ def main():
     print ("-- Regression Tree --")
 
     # Load temperature data
-    data = pd.read_csv('mlfromscratch/data/TempLinkoping2016.txt', sep="\t")
+    data = pd.read_csv('../data/TempLinkoping2016.txt', sep="\t")
 
     time = np.atleast_2d(data["time"].values).T
     temp = np.atleast_2d(data["temp"].values).T

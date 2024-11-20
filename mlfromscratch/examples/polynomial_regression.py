@@ -11,7 +11,7 @@ from mlfromscratch.utils import train_test_split, polynomial_features, Plot
 def main():
 
     # Load temperature data
-    data = pd.read_csv('mlfromscratch/data/TempLinkoping2016.txt', sep="\t")
+    data = pd.read_csv('../data/TempLinkoping2016.txt', sep="\t")
 
     time = np.atleast_2d(data["time"].values).T
     temp = data["temp"].values
