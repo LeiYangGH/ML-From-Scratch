@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 # Import helper functions
-from mlfromscratch.supervised_learning import ElasticNet
-from mlfromscratch.utils import k_fold_cross_validation_sets, normalize, mean_squared_error
-from mlfromscratch.utils import train_test_split, polynomial_features, Plot
+from data_manipulation import train_test_split, normalize, to_categorical,make_diagonal,batch_iterator,divide_on_feature,get_random_subsets
+from data_operation import accuracy_score,euclidean_distance,calculate_entropy,calculate_covariance_matrix
+from misc import Plot
 
 
 def main():

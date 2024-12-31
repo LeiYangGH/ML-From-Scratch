@@ -4,10 +4,10 @@ from sklearn import datasets
 import matplotlib.pyplot as plt
 
 # Import helper functions
-from mlfromscratch.utils import train_test_split, accuracy_score
-from mlfromscratch.deep_learning.loss_functions import CrossEntropy
-from mlfromscratch.utils import Plot
-from mlfromscratch.supervised_learning import GradientBoostingClassifier
+from data_manipulation import train_test_split, normalize, to_categorical,make_diagonal,batch_iterator,divide_on_feature,get_random_subsets,to_categorical
+from data_operation import accuracy_score,euclidean_distance,calculate_entropy,calculate_covariance_matrix
+from misc import Plot
+from gradient_boosting import GradientBoostingClassifier
 
 def main():
 

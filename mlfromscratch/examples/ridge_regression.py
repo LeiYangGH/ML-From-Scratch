@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 # Import helper functions
-from mlfromscratch.supervised_learning import PolynomialRidgeRegression
-from mlfromscratch.utils import k_fold_cross_validation_sets, normalize, Plot
-from mlfromscratch.utils import train_test_split, polynomial_features, mean_squared_error
-
+from regression import LassoRegression,PolynomialRidgeRegression
+from data_operation import accuracy_score,euclidean_distance,calculate_entropy,calculate_covariance_matrix,mean_squared_error
+from misc import Plot
+from data_manipulation import train_test_split, normalize, to_categorical,make_diagonal,batch_iterator,divide_on_feature,get_random_subsets,to_categorical,k_fold_cross_validation_sets
 
 def main():
 

@@ -1,22 +1,28 @@
 from __future__ import print_function
-import sys
-sys.path.insert(0,r'C:\G\ML-From-Scratch')
 from sklearn import datasets
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-
-from mlfromscratch.utils import train_test_split, normalize, to_categorical, accuracy_score
-from mlfromscratch.deep_learning.optimizers import Adam
-from mlfromscratch.deep_learning.loss_functions import CrossEntropy
-from mlfromscratch.deep_learning.activation_functions import Softmax
-from mlfromscratch.utils.kernels import *
-from mlfromscratch.supervised_learning import *
-from mlfromscratch.deep_learning import *
-from mlfromscratch.unsupervised_learning import PCA
-from mlfromscratch.deep_learning.layers import Dense, Dropout, Conv2D, Flatten, Activation
-
-
+from data_manipulation import train_test_split, normalize, to_categorical,make_diagonal
+from data_operation import accuracy_score
+from optimizers import Adam
+from loss_functions import CrossEntropy
+from activation_functions import Softmax
+from kernels import *
+from principal_component_analysis import PCA
+from layers import Dense, Dropout, Conv2D, Flatten, Activation
+from  adaboost import Adaboost
+from naive_bayes import NaiveBayes
+from k_nearest_neighbors import KNN
+from logistic_regression import LogisticRegression
+from neural_network import NeuralNetwork
+from perceptron import Perceptron
+from decision_tree import ClassificationTree,XGBoostRegressionTree
+from random_forest import RandomForest
+from support_vector_machine import SupportVectorMachine
+from linear_discriminant_analysis import LDA
+from gradient_boosting import GradientBoostingClassifier
+from xgboost import XGBoost
 print ("+-------------------------------------------+")
 print ("|                                           |")
 print ("|       Machine Learning From Scratch       |")

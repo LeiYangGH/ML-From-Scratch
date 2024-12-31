@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 # Import helper functions
-from mlfromscratch.supervised_learning import LassoRegression
-from mlfromscratch.utils import k_fold_cross_validation_sets, normalize, mean_squared_error
-from mlfromscratch.utils import train_test_split, polynomial_features, Plot
+from regression import LassoRegression
+from data_manipulation import train_test_split, normalize, to_categorical,make_diagonal,batch_iterator,divide_on_feature,get_random_subsets,to_categorical
+from data_operation import accuracy_score,euclidean_distance,calculate_entropy,calculate_covariance_matrix,mean_squared_error
+from misc import Plot
 
 
 def main():

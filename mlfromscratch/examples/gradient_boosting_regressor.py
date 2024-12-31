@@ -4,11 +4,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import progressbar
 
-from mlfromscratch.utils import train_test_split, standardize, to_categorical
-from mlfromscratch.utils import mean_squared_error, accuracy_score, Plot
-from mlfromscratch.utils.loss_functions import SquareLoss
-from mlfromscratch.utils.misc import bar_widgets
-from mlfromscratch.supervised_learning import GradientBoostingRegressor
+from data_manipulation import train_test_split, normalize, to_categorical,make_diagonal,batch_iterator,divide_on_feature,get_random_subsets,to_categorical
+from data_operation import accuracy_score,euclidean_distance,calculate_entropy,mean_squared_error
+from misc import Plot
+from loss_functions import SquareLoss
+from misc import bar_widgets
+from gradient_boosting import GradientBoostingClassifier,GradientBoostingRegressor
 
 
 def main():
