@@ -64,7 +64,7 @@ class GradientBoosting(object):
             self.trees[i].fit(X, gradient)
             update = self.trees[i].predict(X)
             # Update y prediction
-            y_pred -= np.multiply(self.learning_rate, update)
+            y_pred  =y_pred- np.multiply(self.learning_rate, update, casting='unsafe')
 
 
     def predict(self, X):
@@ -77,6 +77,10 @@ class GradientBoosting(object):
 
         if not self.regression:
             # Turn into probability distribution
+            try:
+                y_pred = y_pred.astype(float)
+            except:
+                pass
             y_pred = np.exp(y_pred) / np.expand_dims(np.sum(np.exp(y_pred), axis=1), axis=1)
             # Set label to the value that maximizes probability
             y_pred = np.argmax(y_pred, axis=1)

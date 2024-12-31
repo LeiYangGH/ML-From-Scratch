@@ -9,9 +9,10 @@ from mlfromscratch.supervised_learning import LinearRegression
 
 def main():
 
-    X, y = make_regression(n_samples=100, n_features=1, noise=20)
+    X, y = make_regression(n_samples=100, n_features=1, noise=10)
+    print(X)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1,shuffle=False)
 
     n_samples, n_features = np.shape(X)
 
@@ -20,13 +21,13 @@ def main():
     model.fit(X_train, y_train)
     
     # Training error plot
-    n = len(model.training_errors)
-    training, = plt.plot(range(n), model.training_errors, label="Training Error")
-    plt.legend(handles=[training])
-    plt.title("Error Plot")
-    plt.ylabel('Mean Squared Error')
-    plt.xlabel('Iterations')
-    plt.show()
+    # n = len(model.training_errors)
+    # training, = plt.plot(range(n), model.training_errors, label="Training Error")
+    # plt.legend(handles=[training])
+    # plt.title("Error Plot")
+    # plt.ylabel('Mean Squared Error')
+    # plt.xlabel('Iterations')
+    # plt.show()
 
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)

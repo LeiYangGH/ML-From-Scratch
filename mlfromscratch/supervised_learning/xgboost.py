@@ -84,8 +84,11 @@ class XGBoost(object):
             y_and_pred = np.concatenate((y, y_pred), axis=1)
             tree.fit(X, y_and_pred)
             update_pred = tree.predict(X)
-
-            y_pred -= np.multiply(self.learning_rate, update_pred)
+            try:
+                y_pred = y_pred.astype(float)
+            except:
+                pass
+            y_pred = y_pred - np.multiply(self.learning_rate, update_pred, casting='unsafe')
 
     def predict(self, X):
         y_pred = None
@@ -95,8 +98,12 @@ class XGBoost(object):
             update_pred = tree.predict(X)
             if y_pred is None:
                 y_pred = np.zeros_like(update_pred)
-            y_pred -= np.multiply(self.learning_rate, update_pred)
-
+            y_pred = y_pred - np.multiply(self.learning_rate, update_pred, casting='unsafe')
+        try:
+            # x.float()
+            y_pred = y_pred.astype(float)
+        except:
+            pass
         # Turn into probability distribution (Softmax)
         y_pred = np.exp(y_pred) / np.sum(np.exp(y_pred), axis=1, keepdims=True)
         # Set label to the value that maximizes probability

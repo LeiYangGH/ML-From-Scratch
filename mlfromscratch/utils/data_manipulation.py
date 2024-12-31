@@ -36,8 +36,9 @@ def divide_on_feature(X, feature_i, threshold):
 
     X_1 = np.array([sample for sample in X if split_func(sample)])
     X_2 = np.array([sample for sample in X if not split_func(sample)])
-
-    return np.array([X_1, X_2])
+    # print(np.shape(X_1))
+    # print(np.shape(X_2))
+    return np.array([X_1, X_2],np.ndarray)
 
 
 def polynomial_features(X, degree):

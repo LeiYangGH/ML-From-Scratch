@@ -5,6 +5,11 @@ import numpy as np
 
 class Sigmoid():
     def __call__(self, x):
+        try:
+            # x.float()
+            x = x.astype(float)
+        except:
+            pass
         return 1 / (1 + np.exp(-x))
 
     def gradient(self, x):

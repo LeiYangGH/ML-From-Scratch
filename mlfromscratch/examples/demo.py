@@ -1,4 +1,6 @@
 from __future__ import print_function
+import sys
+sys.path.insert(0,r'C:\G\ML-From-Scratch')
 from sklearn import datasets
 import numpy as np
 import math
